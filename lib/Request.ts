@@ -1,35 +1,95 @@
-import { IncomingMessage } from 'http';
+import HttpMethod from 'enums/HttpMethod';
+import BadRequestError from 'errors/http/BadRequestError';
+import UnsupportedMediaTypeError from 'errors/http/InternalServerError';
+import { IncomingMessage, IncomingHttpHeaders } from 'http';
+import { decode as decodeQueryString, ParsedUrlQuery } from 'querystring';
+import Body from 'lib/Body';
+import { memoize } from './utils';
+
+/**
+ * Parses the request's raw buffer into a body object.
+ *
+ * @param bodyBuffer
+ * @throws {BadRequestError}
+ * @returns {Body | undefined}
+ */
+const parseJSONBody = (bodyBuffer: string): Body | undefined => {
+  try {
+    return bodyBuffer.length > 0 ? JSON.parse(bodyBuffer) : undefined;
+  } catch (error) {
+    throw new BadRequestError();
+  }
+};
 
 class Request {
   private incomingMessage: IncomingMessage;
 
+  readonly method: HttpMethod;
+
+  readonly headers: IncomingHttpHeaders;
+
+  readonly path: string;
+
+  readonly query: ParsedUrlQuery;
+
   constructor(incomingMessage: IncomingMessage) {
     this.incomingMessage = incomingMessage;
-    console.log(this.incomingMessage.headers);
+    this.method = this.incomingMessage.method as HttpMethod;
+    this.headers = this.incomingMessage.headers;
+
+    const parsedUrl = this.parseUrl();
+    this.path = parsedUrl.path;
+    this.query = parsedUrl.query;
   }
 
-  /*
-  private parseBody = async (request: IncomingMessage): Promise<JSONBody> => new Promise(
-    (resolve, reject) => {
-      const body: Uint8Array[] = [];
+  private parseUrl = (): { path: string, query: ParsedUrlQuery } => {
+    const [path, queryString] = (this.incomingMessage.url as string).split('?', 2);
 
-      request
-        .on('error', (error) => reject(error))
-        .on('data', (chunk: Uint8Array) => body.push(chunk))
-        .on('end', () => {
-          try {
-            const bodyBuffer = Buffer.concat(body).toString();
+    return {
+      path,
+      query: queryString != null ? decodeQueryString(queryString) : {},
+    };
+  };
 
-            const jsonBody = bodyBuffer.length > 0 ? JSON.parse(bodyBuffer) : undefined;
+  /**
+   * Get the request body.
+   * Parses the request body from the incomingMessage buffer the first time it is called,
+   * then caches the result for subsequent calls for better performance.
+   * The body will not be parsed unless this function is called somewhere in the middleware stack,
+   * thus saving some extra computation for controllers that don't need it.
+   *
+   * @async
+   * @throws {BadRequestError}
+   * @returns {Promise<Body>}
+   */
+  getBody = memoize(async (): Promise<Body> => {
+    const getBodyBuffer = async (): Promise<string> => new Promise(
+      (resolve, reject) => {
+        const body: Uint8Array[] = [];
 
-            resolve(jsonBody);
-          } catch (error) {
-            reject(error);
-          }
-        });
-    },
-  );
-  */
+        this.incomingMessage
+          .on('error', (error) => reject(error))
+          .on('data', (chunk: Uint8Array) => body.push(chunk))
+          .on('end', () => resolve(Buffer.concat(body).toString()));
+      },
+    );
+
+    switch (this.headers['content-type'] as string) {
+      case 'application/json':
+        return parseJSONBody(await getBodyBuffer());
+
+      case 'application/x-www-form-urlencoded':
+        return { ...decodeQueryString(await getBodyBuffer()) };
+
+      case 'text/plain':
+        return await getBodyBuffer();
+
+      default:
+        throw new UnsupportedMediaTypeError();
+    }
+  });
+
+  getHeader = (headerName: string) => this.headers[headerName.toLowerCase()];
 }
 
 export default Request;

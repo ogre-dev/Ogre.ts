@@ -32,7 +32,7 @@ class Context {
 
   constructor(request: IncomingMessage, response: ServerResponse) {
     this.request = new Request(request);
-    this.response = new Response(response);
+    this.response = new Response();
     this.state = {};
     this.raw = { request, response };
   }
