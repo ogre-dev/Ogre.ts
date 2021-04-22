@@ -1,5 +1,5 @@
 {
-  "name": "@ogre/framework",
+  "name": "@ogre.dev/framework",
   "version": "1.0.0",
   "description": "Ogres are like onions: they have layers; TypeScript framework for Node.js",
   "main": "dist/index.js",
@@ -19,7 +19,7 @@
       "project": "./tsconfig.json"
     }
   },
-  "author": "Maxence Maire <maire.maxence@gmail.com>",
+  "author": "Maxence Maire <framework@ogre.dev>",
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^26.0.22",
