@@ -4,7 +4,7 @@ import UnsupportedMediaTypeError from 'errors/http/InternalServerError';
 import { IncomingMessage, IncomingHttpHeaders } from 'http';
 import { decode as decodeQueryString, ParsedUrlQuery } from 'querystring';
 import Body from 'lib/Body';
-import { memoize } from './utils';
+import { memoize } from 'lib/utils';
 
 /**
  * Parses the request's raw buffer into a body object.

@@ -20,10 +20,6 @@ class Ogre {
    * @async
    */
   listener: RequestListener = async (request, response) => {
-    // TODO: refine type
-    // TODO: Internal Server Error wrapper
-    // TODO: Not Found catcher
-
     const context = new Context(request, response);
 
     const traverseLayer = async (index: number) => {

@@ -1,7 +1,7 @@
 import HttpMethod from 'enums/HttpMethod';
-import Context from './Context';
-import Layer from './Layer';
-import { stringPathToRegExp } from './utils';
+import Context from 'lib/Context';
+import Layer from 'lib/Layer';
+import { stringPathToRegExp } from 'lib/utils';
 
 type Path = RegExp;
 

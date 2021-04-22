@@ -1,22 +1,19 @@
-import HttpStatusCode from 'enums/HttpStatusCode';
-import { internalServerErrorHandler, notFoundHandler } from 'examples/errorHandlers';
-import Users from 'examples/resources/Users';
-import Ogre from './Ogre';
+import Ogre from 'lib/Ogre';
 
-const onion = new Ogre();
+export default Ogre;
 
-onion
-  .addLayer(internalServerErrorHandler)
-  .addLayer(Users)
-  .addLayer(async (context) => {
-    const { response } = context;
+export { default as HttpMethod } from 'enums/HttpMethod';
+export { default as HttpStatusCode } from 'enums/HttpStatusCode';
+export { default as HttpStatusReason } from 'enums/HttpStatusReason';
 
-    response
-      .setStatus(HttpStatusCode.OK)
-      .setBody({ userId: 'blablabla' });
-  })
-  .addLayer(notFoundHandler);
+export { default as OgreError } from 'errors/OgreError';
+export { default as BadRequestError } from 'errors/http/BadRequestError';
+export { default as InternalServerError } from 'errors/http/InternalServerError';
+export { default as UnsupportedMediaTypeError } from 'errors/http/UnsupportedMediaTypeError';
 
-const port = 3000;
-
-onion.listen(port, console.log(`server listening on port ${port}...`));
+export { default as Body } from 'lib/Body';
+export { default as Context } from 'lib/Context';
+export { default as Layer } from 'lib/Layer';
+export { default as Request } from 'lib/Request';
+export { default as Resource } from 'lib/Request';
+export { default as Response } from 'lib/Response';
