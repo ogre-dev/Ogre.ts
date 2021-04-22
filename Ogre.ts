@@ -3,10 +3,8 @@ import {
   RequestListener,
 } from 'http';
 import Context from 'lib/Context';
+import Layer from 'lib/Layer';
 import { once } from 'lib/utils';
-
-// TODO: refine types
-type Layer = (context: Context, next: Function) => Promise<void>;
 
 class Ogre {
   private layers: Layer[] = [];
@@ -23,6 +21,8 @@ class Ogre {
    */
   listener: RequestListener = async (request, response) => {
     // TODO: refine type
+    // TODO: Internal Server Error wrapper
+    // TODO: Not Found catcher
 
     const context = new Context(request, response);
 

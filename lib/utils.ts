@@ -42,7 +42,21 @@ const memoize = <T, A extends any[], R> (fn: (this: T, ...args: A) => R): ((this
   };
 };
 
+/**
+ * Converts a string path into a regular expression.
+ *
+ * @param {string} path
+ * @returns {RegExp}
+ */
+const stringPathToRegExp = (path: string): RegExp => new RegExp(`^${
+  path
+    .replace(/{([^}]*)}/g, '(?<$1>[^/]*)')
+    .replace(/\/?\*$/, '(?:/.*)?')
+    .replace(/\/$/, '/?')
+}$`);
+
 export {
   once,
   memoize,
+  stringPathToRegExp,
 };

@@ -24,13 +24,13 @@ const parseJSONBody = (bodyBuffer: string): Body | undefined => {
 class Request {
   private incomingMessage: IncomingMessage;
 
-  readonly method: HttpMethod;
+  method: HttpMethod;
 
-  readonly headers: IncomingHttpHeaders;
+  headers: IncomingHttpHeaders;
 
-  readonly path: string;
+  path: string;
 
-  readonly query: ParsedUrlQuery;
+  query: ParsedUrlQuery;
 
   constructor(incomingMessage: IncomingMessage) {
     this.incomingMessage = incomingMessage;

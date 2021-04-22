@@ -1,10 +1,10 @@
 {
   "name": "ogre",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Ogres are like onions: they have layers; TypeScript framework for Node.js",
   "main": "app.js",
   "scripts": {
-    "start": "ts-node index.ts",
+    "start": "ts-node -r tsconfig-paths/register index.ts",
     "lint": "eslint --ext .js,.ts .",
     "test": "jest"
   },
