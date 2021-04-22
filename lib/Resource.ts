@@ -1,5 +1,4 @@
 import HttpMethod from 'enums/HttpMethod';
-import Context from 'lib/Context';
 import Layer from 'lib/Layer';
 import { stringPathToRegExp } from 'lib/utils';
 
@@ -36,13 +35,14 @@ class Resource {
 
   patch?: Layer;
 
-  toLayer = (): Layer => async (context: Context, next: Function) => {
+  toLayer = (): Layer => async (context, next) => {
     const { request } = context;
 
     const match = this.path.exec(request.path);
 
     if (match == null) {
-      return next();
+      next();
+      return;
     }
 
     const { groups } = match;
@@ -51,25 +51,79 @@ class Resource {
 
     switch (request.method) {
       case HttpMethod.GET:
-        return this.get ? this.get(context, next) : next();
+        if (this.get != null) {
+          this.get(context, next);
+        } else {
+          next();
+        }
+
+        return;
       case HttpMethod.HEAD:
-        return this.head ? this.head(context, next) : next();
+        if (this.head != null) {
+          this.head(context, next);
+        } else {
+          next();
+        }
+
+        return;
       case HttpMethod.POST:
-        return this.post ? this.post(context, next) : next();
+        if (this.post != null) {
+          this.post(context, next);
+        } else {
+          next();
+        }
+
+        return;
       case HttpMethod.PUT:
-        return this.put ? this.put(context, next) : next();
+        if (this.put != null) {
+          this.put(context, next);
+        } else {
+          next();
+        }
+
+        return;
       case HttpMethod.DELETE:
-        return this.delete ? this.delete(context, next) : next();
+        if (this.delete != null) {
+          this.delete(context, next);
+        } else {
+          next();
+        }
+
+        return;
       case HttpMethod.CONNECT:
-        return this.connect ? this.connect(context, next) : next();
+        if (this.connect != null) {
+          this.connect(context, next);
+        } else {
+          next();
+        }
+
+        return;
       case HttpMethod.OPTIONS:
-        return this.options ? this.options(context, next) : next();
+        if (this.options != null) {
+          this.options(context, next);
+        } else {
+          next();
+        }
+
+        return;
       case HttpMethod.TRACE:
-        return this.trace ? this.trace(context, next) : next();
+        if (this.trace != null) {
+          this.trace(context, next);
+        } else {
+          next();
+        }
+
+        return;
       case HttpMethod.PATCH:
-        return this.patch ? this.patch(context, next) : next();
+        if (this.patch != null) {
+          this.patch(context, next);
+        } else {
+          next();
+        }
+
+        return;
       default:
-        return next();
+        next();
     }
   };
 }

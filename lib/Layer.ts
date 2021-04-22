@@ -1,6 +1,8 @@
 import Context from 'lib/Context';
+import { once } from './utils';
 
-// TODO: refine types
-type Layer = (context: Context, next: () => ReturnType<Layer> | undefined) => Promise<void>;
+type NextLayer = ReturnType<typeof once>;
+
+type Layer = (context: Context, next: NextLayer) => Promise<void>;
 
 export default Layer;
