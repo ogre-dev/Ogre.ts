@@ -21,6 +21,19 @@
   },
   "author": "Maxence Maire <framework@ogre.dev>",
   "license": "MIT",
+  "keywords": [
+    "web",
+    "app",
+    "http",
+    "application",
+    "framework",
+    "rest",
+    "restful",
+    "typescript",
+    "middleware",
+    "layer"
+  ],
+  "files": ["dist"],
   "devDependencies": {
     "@types/jest": "^26.0.22",
     "@types/node": "^14.14.37",
