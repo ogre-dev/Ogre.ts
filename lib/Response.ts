@@ -1,5 +1,5 @@
-import HttpStatusCode from 'enums/HttpStatusCode';
-import Body from 'lib/Body';
+import HttpStatusCode from './enums/HttpStatusCode';
+import Body from './Body';
 
 class Response {
   readonly headers: { [key: string]: string | number };

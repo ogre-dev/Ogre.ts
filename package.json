@@ -2,12 +2,13 @@
   "name": "@ogre.dev/framework",
   "version": "1.0.0",
   "description": "Ogres are like onions: they have layers; TypeScript framework for Node.js",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "start": "ts-node -r tsconfig-paths/register index.ts",
     "lint": "eslint --ext .js,.ts .",
-    "build": "tsc",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && webpack --config webpack.config.ts",
     "test": "jest",
     "coverage": "./node_modules/.bin/jest --coverage"
   },
@@ -33,7 +34,9 @@
     "middleware",
     "layer"
   ],
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "@types/jest": "^26.0.22",
     "@types/node": "^14.14.37",
@@ -43,8 +46,11 @@
     "eslint-plugin-import": "^2.22.1",
     "jest": "^26.6.3",
     "ts-jest": "^26.5.5",
+    "ts-loader": "^9.1.0",
     "ts-node": "^9.1.1",
     "tsconfig-paths": "^3.9.0",
-    "typescript": "^4.2.4"
+    "typescript": "^4.2.4",
+    "webpack": "^5.35.0",
+    "webpack-cli": "^4.6.0"
   }
 }

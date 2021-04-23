@@ -1,4 +1,4 @@
-import Resource from 'lib/Resource';
+import Resource from '../../../dist/lib/Resource';
 import get from './controllers/get';
 
 class Users extends Resource {

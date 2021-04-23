@@ -1,10 +1,10 @@
-import HttpMethod from 'enums/HttpMethod';
-import BadRequestError from 'errors/http/BadRequestError';
-import UnsupportedMediaTypeError from 'errors/http/InternalServerError';
 import { IncomingMessage, IncomingHttpHeaders } from 'http';
 import { decode as decodeQueryString, ParsedUrlQuery } from 'querystring';
-import Body from 'lib/Body';
-import { memoize } from 'lib/utils';
+import HttpMethod from './enums/HttpMethod';
+import BadRequestError from './errors/http/BadRequestError';
+import UnsupportedMediaTypeError from './errors/http/InternalServerError';
+import Body from './Body';
+import { memoize } from './utils';
 
 /**
  * Parses the request's raw buffer into a body object.

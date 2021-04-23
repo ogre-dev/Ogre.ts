@@ -1,5 +1,5 @@
-import HttpStatusCode from 'enums/HttpStatusCode';
-import Layer from 'lib/Layer';
+import HttpStatusCode from '../dist/lib/enums/HttpStatusCode';
+import Layer from '../dist/lib/Layer';
 
 const internalServerErrorHandler: Layer = async (context, next) => {
   try {

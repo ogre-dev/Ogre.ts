@@ -1,5 +1,5 @@
-import HttpStatusReason from 'enums/HttpStatusReason';
-import OgreError from 'errors/OgreError';
+import HttpStatusReason from '../../enums/HttpStatusReason';
+import OgreError from '../OgreError';
 
 class BadRequestError extends OgreError {
   constructor(m: string = HttpStatusReason.BAD_REQUEST) {

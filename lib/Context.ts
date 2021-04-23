@@ -1,6 +1,6 @@
-import Request from 'lib/Request';
-import Response from 'lib/Response';
 import { IncomingMessage, ServerResponse } from 'http';
+import Request from './Request';
+import Response from './Response';
 
 class Context {
   /** Incoming request object. */

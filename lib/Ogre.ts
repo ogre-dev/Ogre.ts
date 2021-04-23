@@ -2,9 +2,9 @@ import {
   createServer,
   RequestListener,
 } from 'http';
-import Context from 'lib/Context';
-import Layer from 'lib/Layer';
-import { once } from 'lib/utils';
+import Context from './Context';
+import Layer from './Layer';
+import { once } from './utils';
 
 class Ogre {
   private layers: Layer[] = [];

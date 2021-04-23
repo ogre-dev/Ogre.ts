@@ -1,4 +1,4 @@
-import Context from 'lib/Context';
+import Context from '../../../../dist/lib/Context';
 
 const get = async (context: Context) => {
   const { response } = context;

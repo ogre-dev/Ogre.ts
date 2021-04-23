@@ -1,4 +1,4 @@
-import Context from 'lib/Context';
+import Context from './Context';
 import { once } from './utils';
 
 type NextLayer = ReturnType<typeof once>;
