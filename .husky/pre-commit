@@ -1,0 +1,4 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npm i && npm run clean && npm run test && npm run package && npm run lint

@@ -15,9 +15,6 @@
     "license": "gulp license",
     "prepare": "husky install"
   },
-  "husky": {
-    "pre-commit": "npm i && npm run clean && npm run test && npm run package && npm run lint"
-  },
   "author": "Maxence Maire <framework@ogre.dev>",
   "license": "MIT",
   "keywords": [
