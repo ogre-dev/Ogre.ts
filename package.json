@@ -1,9 +1,10 @@
 {
   "name": "@ogre.dev/framework",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Ogres are like onions... They have layers; TypeScript framework for Node.js",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "homepage": "https://github.com/ogre-dev/Ogre.ts",
   "scripts": {
     "start": "ts-node -r tsconfig-paths/register index.ts",
     "lint": "eslint . --ext .js,.ts",
