@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "airbnb-typescript/base"
+  ],
+  "plugins": [
+    "tsdoc"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "tsdoc/syntax": "error"
+  }
+}

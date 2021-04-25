@@ -9,11 +9,11 @@ import { memoize } from './utils';
 /**
  * Parses the request's raw buffer into a body object.
  *
- * @param bodyBuffer
- * @throws {BadRequestError}
- * @returns {Body | undefined}
+ * @param bodyBuffer - Raw body buffer.
+ * @throws {@link BadRequestError}
+ * @returns A {@link Body | `Body`} object representing the parsed request body.
  */
-const parseJSONBody = (bodyBuffer: string): Body | undefined => {
+const parseJSONBody = (bodyBuffer: string): Body => {
   try {
     return bodyBuffer.length > 0 ? JSON.parse(bodyBuffer) : undefined;
   } catch (error) {
@@ -21,16 +21,28 @@ const parseJSONBody = (bodyBuffer: string): Body | undefined => {
   }
 };
 
+/**
+ * Request class instanciated for every new request and attached to the context object passed
+ *   across the layer stack. Used to access various properties of the original HTTP request.
+ */
 class Request {
+  /** Original `IncomingMessage` object. */
   private incomingMessage: IncomingMessage;
 
+  /** HTTP request method. */
   method: HttpMethod;
 
+  /** List of request headers. */
   headers: IncomingHttpHeaders;
 
+  /** Path to the requested resource. */
   path: string;
 
+  /** Query parameters. */
   query: ParsedUrlQuery;
+
+  /** Path parameters. Unless set by a {@link Resource | resource}, this property is undefined. */
+  pathParameters?: { [key: string]: string };
 
   constructor(incomingMessage: IncomingMessage) {
     this.incomingMessage = incomingMessage;
@@ -42,6 +54,11 @@ class Request {
     this.query = parsedUrl.query;
   }
 
+  /**
+   * Parses the request URL.
+   *
+   * @returns The path and query of the request URL.
+   */
   private parseUrl = (): { path: string, query: ParsedUrlQuery } => {
     const [path, queryString] = (this.incomingMessage.url as string).split('?', 2);
 
@@ -52,15 +69,18 @@ class Request {
   };
 
   /**
-   * Get the request body.
-   * Parses the request body from the incomingMessage buffer the first time it is called,
-   * then caches the result for subsequent calls for better performance.
-   * The body will not be parsed unless this function is called somewhere in the middleware stack,
-   * thus saving some extra computation for controllers that don't need it.
+   * Returns the request body.
    *
-   * @async
-   * @throws {BadRequestError}
-   * @returns {Promise<Body>}
+   * @remarks
+   *
+   * Parses the request body from the incomingMessage buffer the first time it is called, then
+   *   caches the result for subsequent calls for better performance.
+   *
+   * The body will not be parsed unless this function is called somewhere in the middleware stack,
+   *   thus saving some extra computation for controllers that don't need it.
+   *
+   * @throws {@link BadRequestError}
+   * @returns The body of the request.
    */
   getBody = memoize(async (): Promise<Body> => {
     const getBodyBuffer = async (): Promise<string> => new Promise(
@@ -89,6 +109,12 @@ class Request {
     }
   });
 
+  /**
+   * Gets the value of a header from its name.
+   *
+   * @param headerName - Name of the header.
+   * @returns The value of the header.
+   */
   getHeader = (headerName: string) => this.headers[headerName.toLowerCase()];
 }
 

@@ -1,7 +1,7 @@
 /**
  * Hypertext Transfer Protocol (HTTP) response status reason phrases.
+ *
  * @see {@link https://tools.ietf.org/html/rfc7231#section-6}
- * @enum
  */
 enum HttpStatusReason {
   CONTINUE = 'Continue',

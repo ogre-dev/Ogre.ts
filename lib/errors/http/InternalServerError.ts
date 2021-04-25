@@ -5,7 +5,7 @@ class UnsupportedMediaTypeError extends OgreError {
   constructor(m: string = HttpStatusReason.UNSUPPORTED_MEDIA_TYPE) {
     super(m);
 
-    Object.setPrototypeOf(this, OgreError.prototype);
+    Object.setPrototypeOf(this, UnsupportedMediaTypeError.prototype);
   }
 }
 

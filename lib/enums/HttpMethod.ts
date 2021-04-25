@@ -1,6 +1,5 @@
 /**
- * HTTP methods. Values in capitals.
- * @enum
+ * HTTP methods. Values are in capital letters.
  */
 enum HttpMethod {
   GET = 'GET',

@@ -1,24 +1,22 @@
 {
   "name": "@ogre.dev/framework",
   "version": "1.0.0",
-  "description": "Ogres are like onions: they have layers; TypeScript framework for Node.js",
+  "description": "Ogres are like onions... They have layers; TypeScript framework for Node.js",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
     "start": "ts-node -r tsconfig-paths/register index.ts",
-    "lint": "eslint --ext .js,.ts .",
-    "clean": "rm -rf dist",
-    "build": "npm run clean && webpack --config webpack.config.ts",
-    "test": "jest",
-    "coverage": "./node_modules/.bin/jest --coverage"
+    "lint": "eslint . --ext .js,.ts",
+    "test": "jest --coverage --config jest.config.json",
+    "documentation": "typedoc lib/index.ts",
+    "clean": "gulp clean",
+    "build": "gulp build",
+    "package": "gulp package && cp LICENSE dist",
+    "license": "gulp license",
+    "prepare": "husky install"
   },
-  "eslintConfig": {
-    "extends": [
-      "airbnb-typescript/base"
-    ],
-    "parserOptions": {
-      "project": "./tsconfig.json"
-    }
+  "husky": {
+    "pre-commit": "npm i && npm run clean && npm run test && npm run package && npm run lint"
   },
   "author": "Maxence Maire <framework@ogre.dev>",
   "license": "MIT",
@@ -38,19 +36,22 @@
     "dist"
   ],
   "devDependencies": {
+    "@types/gulp": "^4.0.8",
     "@types/jest": "^26.0.22",
     "@types/node": "^14.14.37",
     "@typescript-eslint/eslint-plugin": "^4.21.0",
+    "del": "^6.0.0",
     "eslint": "^7.24.0",
     "eslint-config-airbnb-typescript": "^12.3.1",
     "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-tsdoc": "^0.2.14",
+    "gulp": "^4.0.2",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "husky": "^6.0.0",
     "jest": "^26.6.3",
     "ts-jest": "^26.5.5",
-    "ts-loader": "^9.1.0",
     "ts-node": "^9.1.1",
-    "tsconfig-paths": "^3.9.0",
-    "typescript": "^4.2.4",
-    "webpack": "^5.35.0",
-    "webpack-cli": "^4.6.0"
+    "typedoc": "^0.20.36",
+    "typescript": "^4.2.4"
   }
 }

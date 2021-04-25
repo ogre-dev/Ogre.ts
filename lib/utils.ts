@@ -1,15 +1,18 @@
 /**
- * Executes the function given as an argument once then does nothing.
+ * Returns a function that executes the function given as an argument once on the first call then
+ *   does nothing.
  *
- * @param {(this: T, ...args: A) => R} fn
- * @returns {((that: T, ...args: A) => R | undefined)}
+ * @typeParam T - Context type (this).
+ * @typeParam A - List of arguments of the function passed as a parameter.
+ * @typeParam R - Return type of the function passed as a parameter.
+ * @param fn - Function to be made callable only once.
+ * @returns A function that can be called only once.
  */
 // eslint-disable-next-line max-len
 const once = <T, A extends any[], R> (fn: (this: T, ...args: A) => R): ((this: T, ...args: A) => R | undefined) => {
   let hasAlreadyBeenRun = false;
 
-  // eslint-disable-next-line func-names
-  return function (this: T, ...args: A) {
+  return function oncifiedFunction(this: T, ...args: A) {
     if (hasAlreadyBeenRun === false) {
       const result = fn.call(this, ...args);
       hasAlreadyBeenRun = true;
@@ -21,18 +24,23 @@ const once = <T, A extends any[], R> (fn: (this: T, ...args: A) => R): ((this: T
 };
 
 /**
- * Executes the function given as an argument once then caches the result for subsequent calls.
+ * Returns a function that executes the function given as an argument once then caches the result
+ *   for subsequent calls.
  *
- * @param {(this: T, ...args: A) => R} fn
- * @returns {((that: T, ...args: A) => R)}
+ * @typeParam T - Context type (this).
+ * @typeParam A - List of arguments of the function passed as a parameter.
+ * @typeParam R - Return type of the function passed as a parameter.
+ * @param fn - Function to memoize.
+ * @returns A memoized function, i.e. A function that executes the function passed as an argument
+ *   only once on the first run and then returns the value cached from the first run on subsequent
+ *   calls.
  */
 // eslint-disable-next-line max-len
 const memoize = <T, A extends any[], R> (fn: (this: T, ...args: A) => R): ((this: T, ...args: A) => R | R) => {
   let hasAlreadyBeenRun = false;
   let memo: R;
 
-  // eslint-disable-next-line func-names
-  return function (this: T, ...args: A) {
+  return function memoizedFunction(this: T, ...args: A) {
     if (hasAlreadyBeenRun === false) {
       memo = fn.call(this, ...args);
       hasAlreadyBeenRun = true;
@@ -45,8 +53,8 @@ const memoize = <T, A extends any[], R> (fn: (this: T, ...args: A) => R): ((this
 /**
  * Converts a string path into a regular expression.
  *
- * @param {string} path
- * @returns {RegExp}
+ * @param path - Path pattern to be converted to a regular expression.
+ * @returns A regular expression matching paths following the path pattern passed as an argument.
  */
 const stringPathToRegExp = (path: string): RegExp => new RegExp(`^${
   path
