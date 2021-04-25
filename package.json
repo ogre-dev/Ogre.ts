@@ -8,7 +8,7 @@
     "start": "ts-node -r tsconfig-paths/register index.ts",
     "lint": "eslint . --ext .js,.ts",
     "test": "jest --coverage --config jest.config.json",
-    "documentation": "typedoc lib/index.ts",
+    "documentation": "rm -fr docs && typedoc lib/index.ts",
     "clean": "gulp clean",
     "build": "gulp build",
     "package": "gulp package && cp LICENSE dist",
