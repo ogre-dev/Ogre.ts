@@ -1,0 +1,22 @@
+name: Code coverage
+
+on:
+  push:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm i
+      - run: npm run test
+      - uses: codecov/codecov-action@v1.4.1
+        with:
+          flags: unittests
+          fail_ci_if_error: true
+          verbose: true
