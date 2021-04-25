@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: codecov/codecov-action@v1.4.1
         with:
-          directory: ./coverage
           flags: unittests
+          fail_ci_if_error: true
           path_to_write_report: ./coverage/codecov_report.txt
           verbose: true
