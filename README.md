@@ -4,7 +4,7 @@ Fast and minimalist framework for [Node.js](https://nodejs.org/) written in Type
 
 > Ogres are like onions... They have layers.
 
-```typescript
+```ts
 import Ogre from '@ogre.dev/framework";
 const onion = new Ogre();
 

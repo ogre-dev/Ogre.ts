@@ -4,7 +4,8 @@
   "description": "Ogres are like onions... They have layers; TypeScript framework for Node.js",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "homepage": "https://github.com/ogre-dev/Ogre.ts",
+  "homepage": "https://ogre.dev",
+  "repository": "gitlab:user/ogre-dev/Ogre.ts",
   "scripts": {
     "start": "ts-node -r tsconfig-paths/register index.ts",
     "lint": "eslint . --ext .js,.ts",
