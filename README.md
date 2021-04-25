@@ -271,6 +271,26 @@ onion
 
 Not that the order of the layers is important. The `Internal Server Error` layer wraps the entire layer stack and catches unhandled errors while the `Not Found` layer acts as the center-most layer thus intercepting requests that have not been dealt with by previous layers.
 
+## Trivia
+
+The Ogre framework is a reference to the [Shrek movie](https://en.wikipedia.org/wiki/Shrek) and its scene about ogres having layers, much like the framework:
+
+> Shrek: Ogres are like onions.
+>
+> Donkey: They stink?
+>
+> Shrek: Yes... No!
+>
+> Donkey: Oh, they make you cry.
+>
+> Shrek: No.
+>
+> Donkey: Oh, you leave 'em out in the sun, they get all brown, start sproutin' little white hairs.
+>
+> Shrek: No! Layers. Onions have layers. Ogres have layers. Onions have layers. You get it? We both have layers.
+
+The release of the Ogre framework also coincided with the 20th anniversary of the movie.
+
 ## Documentation
 
 [Full documentation](https://ogre-dev.github.io/Ogre.ts/)
