@@ -1,6 +1,6 @@
 {
   "name": "@ogre.dev/framework",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Ogres are like onions... They have layers; TypeScript framework for Node.js",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
