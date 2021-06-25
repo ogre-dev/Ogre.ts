@@ -1,0 +1,398 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@ogre.dev/framework</title>
+	<meta name="description" content="Documentation for @ogre.dev/framework">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">@ogre.dev/framework</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>@ogre.dev/framework</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#the-ogre-framework" id="the-ogre-framework" style="color: inherit; text-decoration: none;">
+					<h1>The Ogre Framework</h1>
+				</a>
+				<p><a href="https://github.com/ogre-dev/Ogre.ts"><img src="https://img.shields.io/github/license/ogre-dev/Ogre.ts" alt="license"></a>
+					<a href="https://www.npmjs.com/package/@ogre.dev/framework"><img src="https://img.shields.io/npm/dt/@ogre.dev/framework" alt="downloads"></a>
+					<a href="https://www.npmjs.com/package/@ogre.dev/framework"><img src="https://img.shields.io/npm/v/@ogre.dev/framework" alt="npm version"></a>
+				<a href="https://codecov.io/gh/ogre-dev/Ogre.ts"><img src="https://img.shields.io/codecov/c/github/ogre-dev/Ogre.ts" alt="codecov"></a></p>
+				<p>Fast and minimalist framework for <a href="https://nodejs.org/">Node.js</a> written in TypeScript.</p>
+				<blockquote>
+					<p>Ogres are like onions... They have layers.</p>
+				</blockquote>
+				<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #001080">Ogre</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@ogre.dev/framework&quot;</span><span style="color: #CD3131">;</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">onion</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Ogre</span><span style="color: #000000">();</span>
+
+<span style="color: #001080">onion</span><span style="color: #000000">.</span><span style="color: #795E26">addLayer</span><span style="color: #000000">((</span><span style="color: #001080">context</span><span style="color: #000000">, </span><span style="color: #001080">next</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">response</span><span style="color: #000000"> } = </span><span style="color: #001080">context</span><span style="color: #000000">;</span>
+
+<span style="color: #000000">  </span><span style="color: #001080">response</span><span style="color: #000000">.</span><span style="color: #795E26">setBody</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;What are you doing in my swamp!?&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #001080">onion</span><span style="color: #000000">.</span><span style="color: #795E26">listen</span><span style="color: #000000">(</span><span style="color: #098658">3000</span><span style="color: #000000">);</span>
+</code></pre>
+				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+					<h2>Installation</h2>
+				</a>
+				<p>The framework is available through an <a href="https://www.npmjs.com/package/@ogre.dev/framework">npm registry</a>:</p>
+				<pre><code class="language-bash"><span style="color: #000000">npm install @ogre.dev/framework</span>
+</code></pre>
+				<a href="#onions-and-layers" id="onions-and-layers" style="color: inherit; text-decoration: none;">
+					<h2>Onions and layers</h2>
+				</a>
+				<p>Unlike most frameworks where middleware functions are called sequentially, the Ogre framework uses a layer system where the first layers in the stack wrap around the following layers, much like onions or Russian dolls.</p>
+				<p>A <code>Layer</code> takes a <code>context</code> and a reference to the <code>next</code> layer as arguments:</p>
+				<pre><code class="language-ts"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #795E26">layer</span><span style="color: #000000">: </span><span style="color: #267F99">Layer</span><span style="color: #000000"> = (</span><span style="color: #001080">context</span><span style="color: #000000">, </span><span style="color: #001080">next</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  ...</span>
+<span style="color: #000000">};</span>
+</code></pre>
+				<p>Whenever a layer calls its <code>next</code> parameter, the request lifecycle enters the next layer in the stack. Once the execution of the next layer has finished, the initial layer can proceed with the rest of its code.</p>
+				<p>Executing the following:</p>
+				<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #001080">Ogre</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@ogre.dev/framework&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">onion</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Ogre</span><span style="color: #000000">();</span>
+
+<span style="color: #001080">onion</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">addLayer</span><span style="color: #000000">((</span><span style="color: #001080">context</span><span style="color: #000000">, </span><span style="color: #001080">next</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;entering layer 0&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">    </span><span style="color: #795E26">next</span><span style="color: #000000">();</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;exiting layer 0&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">  })</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">addLayer</span><span style="color: #000000">((</span><span style="color: #001080">context</span><span style="color: #000000">, </span><span style="color: #001080">next</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;entering layer 1&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">    </span><span style="color: #795E26">next</span><span style="color: #000000">();</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;exiting layer 1&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">  })</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">addLayer</span><span style="color: #000000">((</span><span style="color: #001080">context</span><span style="color: #000000">, </span><span style="color: #001080">next</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;entering layer 2&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;exiting layer 2&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">  };</span>
+
+<span style="color: #001080">onion</span><span style="color: #000000">.</span><span style="color: #795E26">listen</span><span style="color: #000000">(</span><span style="color: #098658">3000</span><span style="color: #000000">);</span>
+</code></pre>
+				<p>...will print:</p>
+				<pre><code class="language-bash"><span style="color: #000000">entering layer 0</span>
+<span style="color: #000000">entering layer 1</span>
+<span style="color: #000000">entering layer 2</span>
+<span style="color: #000000">exiting layer 2</span>
+<span style="color: #000000">exiting layer 1</span>
+<span style="color: #000000">exiting layer 0</span>
+</code></pre>
+				<p>Layers&#39;s <code>next</code> method can only be called once. Subsequent calls are ignored.</p>
+				<p>Note that layers can be asynchronous. When in doubt, it is advised to <code>await</code> the execution of the <code>next</code> layer.</p>
+				<p>A typical use case would be to record the time it took to respond to the request:</p>
+				<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #001080">Ogre</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@ogre.dev/framework&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">onion</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Ogre</span><span style="color: #000000">();</span>
+
+<span style="color: #001080">onion</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">addLayer</span><span style="color: #000000">(</span><span style="color: #0000FF">async</span><span style="color: #000000"> (</span><span style="color: #001080">context</span><span style="color: #000000">, </span><span style="color: #001080">next</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">tic</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">Date</span><span style="color: #000000">().</span><span style="color: #795E26">getTime</span><span style="color: #000000">();</span>
+
+<span style="color: #000000">    </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">next</span><span style="color: #000000">();</span>
+
+<span style="color: #000000">    </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">toc</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">Date</span><span style="color: #000000">().</span><span style="color: #795E26">getTime</span><span style="color: #000000">();</span>
+
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">`execution took </span><span style="color: #0000FF">${</span><span style="color: #001080">toc</span><span style="color: #000000FF"> </span><span style="color: #000000">-</span><span style="color: #000000FF"> </span><span style="color: #001080">tic</span><span style="color: #0000FF">}</span><span style="color: #A31515">ms`</span><span style="color: #000000">);</span>
+<span style="color: #000000">  })</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">addLayer</span><span style="color: #000000">(</span><span style="color: #0000FF">async</span><span style="color: #000000"> () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">Promise</span><span style="color: #000000">((</span><span style="color: #001080">resolve</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #795E26">setTimeout</span><span style="color: #000000">(</span><span style="color: #001080">resolve</span><span style="color: #000000">, </span><span style="color: #098658">1000</span><span style="color: #000000">));</span>
+<span style="color: #000000">  });</span>
+
+<span style="color: #001080">onion</span><span style="color: #000000">.</span><span style="color: #795E26">listen</span><span style="color: #000000">(</span><span style="color: #098658">3000</span><span style="color: #000000">);</span>
+</code></pre>
+				<pre><code class="language-bash"><span style="color: #000000">execution took 1002ms</span>
+</code></pre>
+				<a href="#routing" id="routing" style="color: inherit; text-decoration: none;">
+					<h2>Routing</h2>
+				</a>
+				<a href="#routing-overview" id="routing-overview" style="color: inherit; text-decoration: none;">
+					<h3>Routing overview</h3>
+				</a>
+				<p>The Ogre framework adopts a REST approach to routing with the extendable <code>Resource</code> class to model HTTP resources.</p>
+				<p>For instance, let&#39;s consider the path <code>/users/123</code> which targets the <code>users</code> HTTP resource with a specific <code>userId</code> of 123.</p>
+				<p>Here is how you would define a <code>User</code> resource with a simple <code>GET</code> handler:</p>
+				<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">Resource</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@ogre.dev/framework&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">class</span><span style="color: #000000"> </span><span style="color: #267F99">UserResource</span><span style="color: #000000"> </span><span style="color: #0000FF">extends</span><span style="color: #000000"> </span><span style="color: #267F99">Resource</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">path</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039;/users/{userId}&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #000000">  </span><span style="color: #795E26">get</span><span style="color: #000000"> = (</span><span style="color: #001080">context</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">request</span><span style="color: #000000">, </span><span style="color: #0070C1">response</span><span style="color: #000000"> } = </span><span style="color: #001080">context</span><span style="color: #000000">;</span>
+
+<span style="color: #000000">    </span><span style="color: #001080">response</span><span style="color: #000000">.</span><span style="color: #795E26">setBody</span><span style="color: #000000">({ </span><span style="color: #001080">userId:</span><span style="color: #000000"> </span><span style="color: #001080">request</span><span style="color: #000000">.</span><span style="color: #001080">pathParameters</span><span style="color: #000000">.</span><span style="color: #001080">userId</span><span style="color: #000000"> });</span>
+<span style="color: #000000">  };</span>
+<span style="color: #000000">}</span>
+
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #AF00DB">default</span><span style="color: #000000"> </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">UserResource</span><span style="color: #000000">().</span><span style="color: #795E26">toLayer</span><span style="color: #000000">();</span>
+</code></pre>
+				<p>Note that the <code>userId</code> path variable is accessible through <code>context.request.pathParameters</code>.</p>
+				<p>You can then import the resource into your app and use it as a layer:</p>
+				<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #001080">User</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;./resources/User&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #000000">...</span>
+
+<span style="color: #001080">onion</span><span style="color: #000000">.</span><span style="color: #795E26">addLayer</span><span style="color: #000000">(</span><span style="color: #001080">User</span><span style="color: #000000">);</span>
+
+<span style="color: #000000">...</span>
+</code></pre>
+				<a href="#paths" id="paths" style="color: inherit; text-decoration: none;">
+					<h3>Paths</h3>
+				</a>
+				<p>As we have seen in the <a href="#routing-overview">previous section</a>, resources revolve around their paths.</p>
+				<p>The <code>path</code> property can be either a string or directly a regular expression. The former may contain path variables surrounded by brackets (e.g. <code>{userId}</code>) that are made accessible through <code>context.request.pathParameters</code> inside the resource layers, or an asterisk (e.g. <code>/users/*</code>) to match all paths starting with the pattern preceding the symbol.</p>
+				<p>For instance <code>/users/{userId}/*</code> will match <code>/users/123</code>, <code>/users/my-user</code>, <code>/users/123/this/is/an/example</code> etc.</p>
+				<a href="#best-practice" id="best-practice" style="color: inherit; text-decoration: none;">
+					<h3>Best practice</h3>
+				</a>
+				<p>The example shown in the <a href="#routing-overview">routing overview section</a> is intentionally simple and is only intended to help new users get started.</p>
+				<p>For more advanced applications with many resources, it is best advised to follow a modular approach with a project structure similar to the following:</p>
+				<pre><code class="language-bash"><span style="color: #000000">main.ts</span>
+<span style="color: #000000">/resources</span>
+<span style="color: #000000">  /Users</span>
+<span style="color: #000000">    index.ts</span>
+<span style="color: #000000">    /controllers</span>
+<span style="color: #000000">      get.ts</span>
+<span style="color: #000000">      post.ts</span>
+<span style="color: #000000">      index.ts</span>
+</code></pre>
+				<pre><code class="language-ts"><span style="color: #008000">// /resources/Users/index.ts</span>
+
+<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">Resource</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@ogre.dev/framework&#039;</span><span style="color: #000000">;</span>
+<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">get</span><span style="color: #000000">, </span><span style="color: #001080">post</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;./controllers&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">class</span><span style="color: #000000"> </span><span style="color: #267F99">Users</span><span style="color: #000000"> </span><span style="color: #0000FF">extends</span><span style="color: #000000"> </span><span style="color: #267F99">Resource</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">constructor</span><span style="color: #000000">() {</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">super</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;/users&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">this</span><span style="color: #000000">.</span><span style="color: #001080">get</span><span style="color: #000000"> = </span><span style="color: #001080">get</span><span style="color: #000000">;</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">this</span><span style="color: #000000">.</span><span style="color: #001080">post</span><span style="color: #000000"> = </span><span style="color: #001080">post</span><span style="color: #000000">;</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">}</span>
+
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #AF00DB">default</span><span style="color: #000000"> </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Users</span><span style="color: #000000">().</span><span style="color: #795E26">toLayer</span><span style="color: #000000">();</span>
+</code></pre>
+				<pre><code class="language-ts"><span style="color: #008000">// /resources/Users/controllers/get.ts</span>
+
+<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">Layer</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@ogre.dev/framework&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #795E26">get</span><span style="color: #000000">: </span><span style="color: #267F99">Layer</span><span style="color: #000000"> = (</span><span style="color: #001080">context</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">response</span><span style="color: #000000"> } = </span><span style="color: #001080">context</span><span style="color: #000000">;</span>
+
+<span style="color: #000000">  </span><span style="color: #001080">response</span><span style="color: #000000">.</span><span style="color: #795E26">setBody</span><span style="color: #000000">([</span><span style="color: #008000">/* list of users */</span><span style="color: #000000">]);</span>
+<span style="color: #000000">};</span>
+
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #AF00DB">default</span><span style="color: #000000"> </span><span style="color: #001080">get</span><span style="color: #000000">;</span>
+</code></pre>
+				<pre><code class="language-ts"><span style="color: #008000">// /resources/Users/controllers/index.ts</span>
+
+<span style="color: #AF00DB">export</span><span style="color: #000000"> { </span><span style="color: #AF00DB">default</span><span style="color: #000000"> </span><span style="color: #AF00DB">as</span><span style="color: #000000"> </span><span style="color: #001080">get</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;./get&#039;</span><span style="color: #000000">;</span>
+<span style="color: #AF00DB">export</span><span style="color: #000000"> { </span><span style="color: #AF00DB">default</span><span style="color: #000000"> </span><span style="color: #AF00DB">as</span><span style="color: #000000"> </span><span style="color: #001080">post</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;./post&#039;</span><span style="color: #000000">;</span>
+</code></pre>
+				<pre><code class="language-ts"><span style="color: #008000">// main.ts</span>
+
+<span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #001080">Users</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;./resources/Users&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #000000">...</span>
+
+<span style="color: #001080">onion</span><span style="color: #000000">.</span><span style="color: #795E26">addLayer</span><span style="color: #000000">(</span><span style="color: #001080">Users</span><span style="color: #000000">);</span>
+
+<span style="color: #000000">...</span>
+</code></pre>
+				<a href="#fallback-handler" id="fallback-handler" style="color: inherit; text-decoration: none;">
+					<h3>Fallback handler</h3>
+				</a>
+				<p>You may override the <code>fallback</code> method of the <code>Resource</code> class with a custom layer to handle cases where the request path matched the resource&#39;s but no handlers were found for the requested HTTP method.</p>
+				<a href="#error-handling" id="error-handling" style="color: inherit; text-decoration: none;">
+					<h2>Error handling</h2>
+				</a>
+				<p>The Ogre framework tries to remain as little opinionated as possible, instead leaving the user to decide what works best for their particular needs.</p>
+				<p>By default no error handling is configured. In most cases however, common errors such as <code>404 - Not Found</code> and <code>500 - Internal Server Error</code> should be dealt with. This can be achieved with the following:</p>
+				<pre><code class="language-ts"><span style="color: #008000">// main.ts</span>
+
+<span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #001080">Ogre</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@ogre.dev/framework&#039;</span><span style="color: #000000">;</span>
+<span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #001080">Users</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;./resources/Users&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">onion</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Ogre</span><span style="color: #000000">();</span>
+
+<span style="color: #001080">onion</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">addLayer</span><span style="color: #000000">(</span><span style="color: #0000FF">async</span><span style="color: #000000"> (</span><span style="color: #001080">context</span><span style="color: #000000">, </span><span style="color: #001080">next</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #AF00DB">try</span><span style="color: #000000"> {</span>
+<span style="color: #000000">      </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">next</span><span style="color: #000000">();</span>
+<span style="color: #000000">    } </span><span style="color: #AF00DB">catch</span><span style="color: #000000"> (</span><span style="color: #001080">error</span><span style="color: #000000">) {</span>
+<span style="color: #000000">      </span><span style="color: #008000">// handle 500 errors</span>
+<span style="color: #000000">      </span><span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">response</span><span style="color: #000000"> } = </span><span style="color: #001080">context</span><span style="color: #000000">;</span>
+
+<span style="color: #000000">      </span><span style="color: #001080">response</span>
+<span style="color: #000000">        .</span><span style="color: #795E26">setStatus</span><span style="color: #000000">(</span><span style="color: #001080">HttpStatusCode</span><span style="color: #000000">.</span><span style="color: #0070C1">INTERNAL_SERVER_ERROR</span><span style="color: #000000">)</span>
+<span style="color: #000000">        .</span><span style="color: #795E26">setBody</span><span style="color: #000000">({ </span><span style="color: #001080">message:</span><span style="color: #000000"> </span><span style="color: #001080">HttpStatusReason</span><span style="color: #000000">.</span><span style="color: #0070C1">INTERNAL_SERVER_ERROR</span><span style="color: #000000"> });</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">  })</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">addLayer</span><span style="color: #000000">(</span><span style="color: #001080">Users</span><span style="color: #000000">)</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">addLayer</span><span style="color: #000000">((</span><span style="color: #001080">context</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #008000">// handle 404 errors</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">response</span><span style="color: #000000"> } = </span><span style="color: #001080">context</span><span style="color: #000000">;</span>
+
+<span style="color: #000000">    </span><span style="color: #001080">response</span>
+<span style="color: #000000">      .</span><span style="color: #795E26">setStatus</span><span style="color: #000000">(</span><span style="color: #001080">HttpStatusCode</span><span style="color: #000000">.</span><span style="color: #0070C1">NOT_FOUND</span><span style="color: #000000">)</span>
+<span style="color: #000000">      .</span><span style="color: #795E26">setBody</span><span style="color: #000000">({ </span><span style="color: #001080">message:</span><span style="color: #000000"> </span><span style="color: #001080">HttpStatusReason</span><span style="color: #000000">.</span><span style="color: #0070C1">NOT_FOUND</span><span style="color: #000000">});</span>
+<span style="color: #000000">  });</span>
+</code></pre>
+				<p>Not that the order of the layers is important. The <code>Internal Server Error</code> layer wraps the entire layer stack and catches unhandled errors while the <code>Not Found</code> layer acts as the center-most layer thus intercepting requests that have not been dealt with by previous layers.</p>
+				<a href="#trivia" id="trivia" style="color: inherit; text-decoration: none;">
+					<h2>Trivia</h2>
+				</a>
+				<p>The Ogre framework is a reference to the <a href="https://en.wikipedia.org/wiki/Shrek">Shrek movie</a> and its scene about ogres having layers, much like the framework:</p>
+				<blockquote>
+					<p>Shrek: Ogres are like onions.</p>
+					<p>Donkey: They stink?</p>
+					<p>Shrek: Yes... No!</p>
+					<p>Donkey: Oh, they make you cry.</p>
+					<p>Shrek: No.</p>
+					<p>Donkey: Oh, you leave &#39;em out in the sun, they get all brown, start sproutin&#39; little white hairs.</p>
+					<p>Shrek: No! Layers. Onions have layers. Ogres have layers. Onions have layers. You get it? We both have layers.</p>
+				</blockquote>
+				<p>The release of the Ogre framework also coincided with the 20th anniversary of the movie.</p>
+				<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
+					<h2>Documentation</h2>
+				</a>
+				<p><a href="https://ogre-dev.github.io/Ogre.ts/">Full documentation</a></p>
+				<a href="#contact" id="contact" style="color: inherit; text-decoration: none;">
+					<h2>Contact</h2>
+				</a>
+				<ul>
+					<li><a href="https://github.com/ogre-dev/Ogre.ts">Github</a></li>
+					<li><a href="https://discord.gg/ZD6ZPwGx">Discord</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum">
+						<a href="enums/httpmethod.html" class="tsd-kind-icon">Http<wbr>Method</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/httpstatuscode.html" class="tsd-kind-icon">Http<wbr>Status<wbr>Code</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/httpstatusreason.html" class="tsd-kind-icon">Http<wbr>Status<wbr>Reason</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/badrequesterror.html" class="tsd-kind-icon">Bad<wbr>Request<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/context.html" class="tsd-kind-icon">Context</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/internalservererror.html" class="tsd-kind-icon">Internal<wbr>Server<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/notfounderror.html" class="tsd-kind-icon">Not<wbr>Found<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/ogreerror.html" class="tsd-kind-icon">Ogre<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/request.html" class="tsd-kind-icon">Request</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/resource.html" class="tsd-kind-icon">Resource</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/response.html" class="tsd-kind-icon">Response</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/unsupportedmediatypeerror.html" class="tsd-kind-icon">Unsupported<wbr>Media<wbr>Type<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/default.html" class="tsd-kind-icon">default</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#body" class="tsd-kind-icon">Body</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#layer" class="tsd-kind-icon">Layer</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

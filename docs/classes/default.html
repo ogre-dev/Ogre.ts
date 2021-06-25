@@ -1,0 +1,363 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>default | @ogre.dev/framework</title>
+	<meta name="description" content="Documentation for @ogre.dev/framework">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">@ogre.dev/framework</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">@ogre.dev/framework</a>
+				</li>
+				<li>
+					<a href="default.html">default</a>
+				</li>
+			</ul>
+			<h1>Class default</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Instantiable Ogre server.</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>remarks</dt>
+						<dd><p>&quot;Ogres are like onions... they have layers.&quot;</p>
+						</dd>
+						<dt>example</dt>
+						<dd><pre><code><span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #001080">Ogre</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@ogre.dev/framework&quot;</span><span style="color: #CD3131">;</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">onion</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Ogre</span><span style="color: #000000">();</span>
+
+<span style="color: #001080">onion</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">addLayer</span><span style="color: #000000">((</span><span style="color: #001080">context</span><span style="color: #000000">, </span><span style="color: #001080">next</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">response</span><span style="color: #000000"> } = </span><span style="color: #001080">context</span><span style="color: #000000">;</span>
+
+<span style="color: #000000">    </span><span style="color: #001080">response</span>
+<span style="color: #000000">      .</span><span style="color: #795E26">setStatus</span><span style="color: #000000">(</span><span style="color: #001080">HttpStatusCode</span><span style="color: #000000">.</span><span style="color: #0070C1">OK</span><span style="color: #000000">)</span>
+<span style="color: #000000">      .</span><span style="color: #795E26">setBody</span><span style="color: #000000">({ </span><span style="color: #001080">message:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;What are you doing in my swamp!?&#039;</span><span style="color: #000000"> });</span>
+<span style="color: #000000">  });</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">port</span><span style="color: #000000"> = </span><span style="color: #098658">3000</span><span style="color: #000000">;</span>
+
+<span style="color: #001080">onion</span><span style="color: #000000">.</span><span style="color: #795E26">listen</span><span style="color: #000000">(</span><span style="color: #001080">port</span><span style="color: #000000">, </span><span style="color: #A31515">`server listening on port </span><span style="color: #0000FF">${</span><span style="color: #001080">port</span><span style="color: #0000FF">}</span><span style="color: #A31515">...`</span><span style="color: #000000">);</span>
+</code></pre>
+						</dd>
+					</dl>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">default</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="default.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="default.html#layers" class="tsd-kind-icon">layers</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="default.html#listener" class="tsd-kind-icon">listener</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="default.html#addlayer" class="tsd-kind-icon">add<wbr>Layer</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="default.html#listen" class="tsd-kind-icon">listen</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new default<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="default.html" class="tsd-signature-type" data-tsd-kind="Class">default</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="default.html" class="tsd-signature-type" data-tsd-kind="Class">default</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="layers" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> layers</h3>
+					<div class="tsd-signature tsd-kind-icon">layers<span class="tsd-signature-symbol">:</span> <a href="../modules.html#layer" class="tsd-signature-type" data-tsd-kind="Type alias">Layer</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/MaxenceMaire/framework/blob/778b4e4/lib/Ogre.ts#L38">lib/Ogre.ts:38</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="listener" class="tsd-anchor"></a>
+					<h3>listener</h3>
+					<div class="tsd-signature tsd-kind-icon">listener<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RequestListener</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/MaxenceMaire/framework/blob/778b4e4/lib/Ogre.ts#L57">lib/Ogre.ts:57</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Handles incoming server requests.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>param</dt>
+							<dd><p>The original Node.js request.</p>
+							</dd>
+							<dt>param</dt>
+							<dd><p>The Node.js response.</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addlayer" class="tsd-anchor"></a>
+					<h3>add<wbr>Layer</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Layer<span class="tsd-signature-symbol">(</span>layer<span class="tsd-signature-symbol">: </span><a href="../modules.html#layer" class="tsd-signature-type" data-tsd-kind="Type alias">Layer</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="default.html" class="tsd-signature-type" data-tsd-kind="Class">default</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/MaxenceMaire/framework/blob/778b4e4/lib/Ogre.ts#L46">lib/Ogre.ts:46</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Adds a layer passed as an argument to the layer stack. Previous layers wrap this layer.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>layer: <a href="../modules.html#layer" class="tsd-signature-type" data-tsd-kind="Type alias">Layer</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Inner layer to be added to the stack.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="default.html" class="tsd-signature-type" data-tsd-kind="Class">default</a></h4>
+							<p>A reference to the {@link Ogre} instance.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="listen" class="tsd-anchor"></a>
+					<h3>listen</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">listen<span class="tsd-signature-symbol">(</span>port<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, <span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/MaxenceMaire/framework/blob/778b4e4/lib/Ogre.ts#L81">lib/Ogre.ts:81</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Listens to incoming server requests.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>port: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Port number the server should be listening to.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>List of arguments passed on to the inner Node.js server.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum">
+						<a href="../enums/httpmethod.html" class="tsd-kind-icon">Http<wbr>Method</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="../enums/httpstatuscode.html" class="tsd-kind-icon">Http<wbr>Status<wbr>Code</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="../enums/httpstatusreason.html" class="tsd-kind-icon">Http<wbr>Status<wbr>Reason</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="badrequesterror.html" class="tsd-kind-icon">Bad<wbr>Request<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="context.html" class="tsd-kind-icon">Context</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="internalservererror.html" class="tsd-kind-icon">Internal<wbr>Server<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="notfounderror.html" class="tsd-kind-icon">Not<wbr>Found<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="ogreerror.html" class="tsd-kind-icon">Ogre<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="request.html" class="tsd-kind-icon">Request</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="resource.html" class="tsd-kind-icon">Resource</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="response.html" class="tsd-kind-icon">Response</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="unsupportedmediatypeerror.html" class="tsd-kind-icon">Unsupported<wbr>Media<wbr>Type<wbr>Error</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
+						<a href="default.html" class="tsd-kind-icon">default</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="default.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="default.html#layers" class="tsd-kind-icon">layers</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="default.html#listener" class="tsd-kind-icon">listener</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="default.html#addlayer" class="tsd-kind-icon">add<wbr>Layer</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="default.html#listen" class="tsd-kind-icon">listen</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#body" class="tsd-kind-icon">Body</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#layer" class="tsd-kind-icon">Layer</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

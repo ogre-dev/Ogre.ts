@@ -1,0 +1,361 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Context | @ogre.dev/framework</title>
+	<meta name="description" content="Documentation for @ogre.dev/framework">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">@ogre.dev/framework</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">@ogre.dev/framework</a>
+				</li>
+				<li>
+					<a href="context.html">Context</a>
+				</li>
+			</ul>
+			<h1>Class Context</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Context object passed down to every layer exposing a request and a response objects.</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>remarks</dt>
+						<dd><p>Directly affecting the original request and response objects from the <code>raw</code> property may cause
+							unexpected behavior and is not supported.</p>
+						</dd>
+					</dl>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">Context</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="context.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="context.html#raw" class="tsd-kind-icon">raw</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="context.html#request-1" class="tsd-kind-icon">request</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="context.html#response-1" class="tsd-kind-icon">response</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="context.html#state" class="tsd-kind-icon">state</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Context<span class="tsd-signature-symbol">(</span>request<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IncomingMessage</span>, response<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ServerResponse</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="context.html" class="tsd-signature-type" data-tsd-kind="Class">Context</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/MaxenceMaire/framework/blob/778b4e4/lib/Context.ts#L52">lib/Context.ts:52</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>request: <span class="tsd-signature-type">IncomingMessage</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Original <code>IncomingMessage</code>.</p>
+									</div>
+								</li>
+								<li>
+									<h5>response: <span class="tsd-signature-type">ServerResponse</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p><code>ServerResponse</code> abstracted by <a href="response.html">Response</a>.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="context.html" class="tsd-signature-type" data-tsd-kind="Class">Context</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="raw" class="tsd-anchor"></a>
+					<h3>raw</h3>
+					<div class="tsd-signature tsd-kind-icon">raw<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>request<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IncomingMessage</span><span class="tsd-signature-symbol">; </span>response<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ServerResponse</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/MaxenceMaire/framework/blob/778b4e4/lib/Context.ts#L30">lib/Context.ts:30</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Original, untouched Node.js request and response objects.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>remarks</dt>
+							<dd><p>Directly affecting these properties may cause unexpected behavior and is not supported.</p>
+							</dd>
+						</dl>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>request<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IncomingMessage</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>Original, untouched Node.js request object.
+										Calling or modifying its properties directly is not supported.</p>
+									</div>
+									<dl class="tsd-comment-tags">
+										<dt>remarks</dt>
+										<dd><p>Directly affecting the original response object may cause unexpected behavior and is not
+											supported. Refer to <a href="context.html#request-1">Context.request</a> instead.</p>
+										</dd>
+									</dl>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5>response<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ServerResponse</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>Original, untouched Node.js response object.
+										Calling or modifying its properties directly is not supported.</p>
+									</div>
+									<dl class="tsd-comment-tags">
+										<dt>remarks</dt>
+										<dd><p>Directly affecting the original request object may cause unexpected behavior and is not
+											supported. Refer to <a href="context.html#response-1">Context.response</a> instead.</p>
+										</dd>
+									</dl>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="request-1" class="tsd-anchor"></a>
+					<h3>request</h3>
+					<div class="tsd-signature tsd-kind-icon">request<span class="tsd-signature-symbol">:</span> <a href="request.html" class="tsd-signature-type" data-tsd-kind="Class">Request</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/MaxenceMaire/framework/blob/778b4e4/lib/Context.ts#L15">lib/Context.ts:15</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Incoming request object.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="response-1" class="tsd-anchor"></a>
+					<h3>response</h3>
+					<div class="tsd-signature tsd-kind-icon">response<span class="tsd-signature-symbol">:</span> <a href="response.html" class="tsd-signature-type" data-tsd-kind="Class">Response</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/MaxenceMaire/framework/blob/778b4e4/lib/Context.ts#L18">lib/Context.ts:18</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Outbound response object.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="state" class="tsd-anchor"></a>
+					<h3>state</h3>
+					<div class="tsd-signature tsd-kind-icon">state<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/MaxenceMaire/framework/blob/778b4e4/lib/Context.ts#L21">lib/Context.ts:21</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Property used to pass data across the middleware stack.</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">any</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum">
+						<a href="../enums/httpmethod.html" class="tsd-kind-icon">Http<wbr>Method</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="../enums/httpstatuscode.html" class="tsd-kind-icon">Http<wbr>Status<wbr>Code</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="../enums/httpstatusreason.html" class="tsd-kind-icon">Http<wbr>Status<wbr>Reason</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="badrequesterror.html" class="tsd-kind-icon">Bad<wbr>Request<wbr>Error</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
+						<a href="context.html" class="tsd-kind-icon">Context</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="context.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="context.html#raw" class="tsd-kind-icon">raw</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="context.html#request-1" class="tsd-kind-icon">request</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="context.html#response-1" class="tsd-kind-icon">response</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="context.html#state" class="tsd-kind-icon">state</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-class">
+						<a href="internalservererror.html" class="tsd-kind-icon">Internal<wbr>Server<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="notfounderror.html" class="tsd-kind-icon">Not<wbr>Found<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="ogreerror.html" class="tsd-kind-icon">Ogre<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="request.html" class="tsd-kind-icon">Request</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="resource.html" class="tsd-kind-icon">Resource</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="response.html" class="tsd-kind-icon">Response</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="unsupportedmediatypeerror.html" class="tsd-kind-icon">Unsupported<wbr>Media<wbr>Type<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="default.html" class="tsd-kind-icon">default</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#body" class="tsd-kind-icon">Body</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#layer" class="tsd-kind-icon">Layer</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
