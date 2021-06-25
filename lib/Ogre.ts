@@ -65,6 +65,8 @@ class Ogre {
 
     await traverseLayer(0);
 
+    response.statusCode = context.response.status;
+
     Object.entries(context.response.headers).forEach(([header, value]) => {
       response.setHeader(header, value);
     });
