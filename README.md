@@ -54,12 +54,12 @@ const onion = new Ogre();
 onion
   .addLayer((context, next) => {
     console.log('entering layer 0');
-    next()
+    next();
     console.log('exiting layer 0');
   })
   .addLayer((context, next) => {
     console.log('entering layer 1');
-    next()
+    next();
     console.log('exiting layer 1');
   })
   .addLayer((context, next) => {
@@ -96,7 +96,7 @@ onion
   .addLayer(async (context, next) => {
     const tic = new Date().getTime();
 
-    await next()
+    await next();
 
     const toc = new Date().getTime();
 
